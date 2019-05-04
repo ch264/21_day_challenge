@@ -51,5 +51,18 @@ function powerOn() {
 function countModules() {
 	return availableModules.length
 }
-
 countModules();
+
+// Challange 3
+// loop through array and count how many of the modules have the essetial flag set. make a new variable to count the number of essential modules and then build a loop.
+ 
+function countEssential() {
+	let essential = 0;
+	for (modules in availableModules) {
+		if (availableModules[modules].essential) {
+			essential++;
+		}
+	}
+	return essential;
+}
+countEssential(availableModules);
