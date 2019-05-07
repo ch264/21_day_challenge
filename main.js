@@ -67,6 +67,8 @@ function countEssential() {
 }
 countEssential(availableModules);
 
+
+
 // Challange 4
 // The first part of the challenge is to get the index of the module you want to load. In this case it's the "life-support" module.
 // To get the index you need to loop over the availableModules array and find the module with a name-property which equals 'life-support'. If the name is a match you return the index.
@@ -76,28 +78,17 @@ countEssential(availableModules);
 // Before the module is loaded, it needs to be enabled. This means setting the module's enable property to true.
 // Finally the enabled module is loaded into the ship.modules array. I simply added it to the end with the push method. My loadModule function doesn't have a return statement
 
+
+
+function loadModule(index) {
+	availableModules[index].enabled = 'true';
+	ship.modules.push(availableModules[index]);
+}
+	
 // loop over availableModules to find the module called 'life support'
 for (let i = 0; i < availableModules.length; i++) {
-	// if (modules in availableModules == 'life-support') {
-	// 	return 
-	// }
-	if (availableModules.findIndex('life-support')
-	// if name is match
-	// return its index
-	// use it to call loadModule()
-	loadModule();
-
+	if (availableModules[i].name === 'life-support') {
+		loadModule(i);
+	}
 }
 
-
-	function loadModule(index) {
-		// find module by its index, 
-		availableModules[i];
-
-
-		// set enabled property to true, 
-		// add module to ships empty module array
-		ship.modules.push(module);
-	}
-	
-	
